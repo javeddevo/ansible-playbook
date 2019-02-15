@@ -1,0 +1,8 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+  - name: this will create a line ina path
+    command: touch /home/ansible/sample4.txt
+  - name: this will create a line ina file
+    lineinfile: path=/home/ansible/sample4.txt line="helloworld"

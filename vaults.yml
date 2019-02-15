@@ -1,0 +1,2 @@
+ansible-vault encrypt inventryfile --output inv.txt
+ansible-vault view inv.txt

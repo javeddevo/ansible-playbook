@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+  - name: this will create file
+    command: touch /home/ansible/samples.txt
+  - name: this will create directory
+    command: mkdir /home/ansible/fouc
+  - name: this will copy the file 
+    copy: src=/home/ansible/myinv dest=/home/ansible/inv owner=ansible mode=0644      

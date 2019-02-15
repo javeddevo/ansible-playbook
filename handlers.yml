@@ -1,0 +1,21 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+  - apt:
+      name: {{ pkg_name }}
+      state: present
+      update_cache: yes
+    notify: 
+    - restart tomcat
+  - copy:
+      src: /home/ansible/hi
+      dest: {{ destcopy }}
+    notify: 
+    - restart tomcat
+  handlers:
+  - name: restart tomcat
+    service:
+      name: {{ pkg_name }}
+      state: restarted
+      

@@ -1,0 +1,8 @@
+---
+- hosts: ubuntu
+  become: yes
+  vars:
+   servicename: apache2
+  tasks:
+  - name: this will start/stop the service
+    service: name={{ servicename }} state=restarted

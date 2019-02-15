@@ -1,0 +1,25 @@
+---
+- hosts: ubuntu
+  become: yes
+  vars:
+   your_name: javed
+   dummy_no:
+     - 10
+     - 20
+     - 30
+     - 40
+  tasks:
+  - name: this will create a file
+    debug:
+     msg: "hello {{ your_name }}"
+  - name:
+    lineinfile: path=/home/ansible/var.txt line="hello {{ your_name }}"
+  - name:
+    debug:
+      msg: "{{ your_name | upper }}"
+  - name:
+    debug:
+     msg: "{{ your_name | replace('javed','zaved') }}"
+  - name:
+    debug:
+     msg: "{{ dummy_no | min }}"

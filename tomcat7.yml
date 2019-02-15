@@ -1,0 +1,11 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+   - name: update the server
+     apt:
+      update_cache: yes
+   - name: this will install apche
+     apt:
+      name: tomcat7
+      state: present      

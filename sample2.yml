@@ -1,0 +1,6 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+  - name: this will create a directory
+    command: mkdir -p /home/ansible/dir1/dir2

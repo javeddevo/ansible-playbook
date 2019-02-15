@@ -1,0 +1,9 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+  - name:
+    template:
+      src: /home/ansible/hi
+      dest: /home/ansible/hello
+

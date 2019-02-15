@@ -1,0 +1,9 @@
+---
+- hosts: ubuntu
+  become: yes
+  vars:
+   age: 16
+  tasks:
+  - name: thos will create a file
+    command: touch /opt/jk
+    when: age == 16

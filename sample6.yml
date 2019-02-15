@@ -1,0 +1,8 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+  - name: this is will starte the service
+    apt:
+      name: apache2
+      state: absent

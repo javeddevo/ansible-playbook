@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+  - apt:
+     name: "{{ item }}"
+     state: present
+    loop:
+        - git
+        - tree
